@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <style>
+        body {
+            background-color: yellow;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Registration Form</h2>
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="button" onclick="displayData()">Submit</button>
+        </form>
+
+        <div id="displayData">
+            <!-- Data will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        function displayData() {
+            const form = document.getElementById("registrationForm");
+            const displayDiv = document.getElementById("displayData");
+            
+            // Get form values
+            const firstName = form.firstName.value;
+            const lastName = form.lastName.value;
+            const email = form.email.value;
+            
+            // Display the data
+            displayDiv.innerHTML = `
+                <h2>Registration Details:</h2>
+                <p><strong>First Name:</strong> ${firstName}</p>
+                <p><strong>Last Name:</strong> ${lastName}</p>
+                <p><strong>Email:</strong> ${email}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
